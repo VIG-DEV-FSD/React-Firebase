@@ -1,0 +1,53 @@
+@import '~bootstrap/scss/bootstrap';
+@import './global';
+@import './fonts';
+@import './vars';
+
+.list-group-item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.alert{
+  &-enter{
+    opacity: 0
+  }
+  &-enter-active{
+    opacity: 1;
+    transition: opacity 350ms ease
+  }
+  &-exit{
+    opacity: 1;
+  }
+  &-exit-active{
+    opacity: 0;
+    transition: opacity 350ms ease;
+  }
+}
+
+.note{
+  &-enter-active{
+    animation: note .5s ease;
+  }
+  &-exit-active{
+    animation: note .5s ease reverse;
+  }
+}
+
+@keyframes note {
+  0%{
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  50%{
+    opacity: 1;
+    transform: translateX(10px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@import './media';
